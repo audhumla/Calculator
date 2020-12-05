@@ -1,5 +1,8 @@
 # Technical test for Ki Insurance
 
+[![Master Build](https://travis-ci.com/audhumla/Calculator.svg?branch=master)](https://travis-ci.com/github/audhumla/Calculator)
+
+
 ## Description
 Write some code to calculate a result from a set of instructions.
 Instructions comprise a keyword and a number that are separated by a space per line. 

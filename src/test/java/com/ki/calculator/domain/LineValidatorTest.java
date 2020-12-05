@@ -16,12 +16,10 @@ import static com.ki.calculator.domain.Rule.isDivisionByZero;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 
-@DisplayName("Line Validator")
 public class LineValidatorTest {
 
     @Nested
     @TestInstance(PER_CLASS)
-    @DisplayName("Line is correct")
     class LineIsCorrect {
         @SuppressWarnings("unused")
         Stream<Arguments> input() {
@@ -32,11 +30,10 @@ public class LineValidatorTest {
             );
         }
 
-        @DisplayName("Should return true unless it's not a division by zero")
         @ParameterizedTest
         @MethodSource("input")
         void shouldReturnTrue(Line line) {
-            assertThat(isDivisionByZero.test(line)).isTrue();
+            assertThat(isDivisionByZero.test(line)).isFalse();
         }
     }
     @Nested

@@ -1,6 +1,8 @@
-# Technical test for Ki Insurance
+# Calculator
 
 [![Master Build](https://travis-ci.com/audhumla/Calculator.svg?branch=master)](https://travis-ci.com/github/audhumla/Calculator)
+
+<img src="resources/calculator.png" alt="Logo" width="241.2" height="254.6" />
 
 
 ## Description
@@ -14,25 +16,27 @@ The calculator is then initialised with that number and the previous instruction
 
 ### Example 1
 #### [Input from file]
+```
 add 2
 multiply 3
 apply 3
-
+```
 #### [Output to screen]
-15
+`15`
 
 #### [Explanation]
-(3 + 2) * 3 = 15
+`(3 + 2) * 3 = 15`
 
 ### Example 2
 [Input from file]
+```
 multiply 9
 apply 5
-
+```
 #### [Output to screen]
-45
+`45`
 
 ####[Explanation]
-5 * 9 = 45
+`5 * 9 = 45`
 
 Please include unit tests and demonstrate good architectural principles.

@@ -4,6 +4,10 @@
 
 <img src="resources/calculator.png" alt="Logo" width="241.2" height="254.6" />
 
+- [Calculator](#calculator)
+  * [Description](#description)
+    + [Example 1](#example-1) 
+    + [Example 2](#example-2)  
 
 ## Description
 Write some code to calculate a result from a set of instructions.
@@ -28,7 +32,7 @@ apply 3
 `(3 + 2) * 3 = 15`
 
 ### Example 2
-[Input from file]
+#### [Input from file]
 ```
 multiply 9
 apply 5
@@ -36,7 +40,7 @@ apply 5
 #### [Output to screen]
 `45`
 
-####[Explanation]
+#### [Explanation]
 `5 * 9 = 45`
 
 Please include unit tests and demonstrate good architectural principles.

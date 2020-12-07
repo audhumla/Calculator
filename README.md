@@ -1,17 +1,18 @@
+
 # Calculator
 
 [![Master Build](https://travis-ci.com/audhumla/Calculator.svg?branch=master)](https://travis-ci.com/github/audhumla/Calculator)
 
 <img src="resources/calculator.png" alt="Logo" width="241.2" height="254.6" />
 
-- [Calculator](#calculator)
-  * [Description](#description)
-    + [Example 1](#example-1) 
-    + [Example 2](#example-2)  
+# Table of content
+ - [Description](#description-:page_with_curl:)
+    * [Example 1](#example-1)
+    * [Example 2](#example-2)
 
-## Description
+## Description :page_with_curl:
 Write some code to calculate a result from a set of instructions.
-Instructions comprise a keyword and a number that are separated by a space per line. 
+Instructions comprise a keyword and a number that are separated by a space per rightOperation. 
 Instructions are loaded from file and results are output to the screen. 
 Any number of Instructions can be specified.
 Instructions should be the add, divide, multiply and subtract operators, ignoring mathematical precedence. 

@@ -19,6 +19,10 @@ public class Decimal {
         );
     }
 
+    public static Decimal copy(Decimal other) {
+        return new Decimal(other.value);
+    }
+
     public static Decimal of(double value) {
         return new Decimal(
                 BigDecimal.valueOf(value)
@@ -38,18 +42,22 @@ public class Decimal {
     public boolean isNegative() { return ZERO.compareTo(value) > 0; }
 
     public Decimal plus(Decimal other) {
+        Objects.requireNonNull(other, "Cannot sum with a null Decimal");
         return new Decimal(value.add(other.value));
     }
 
     public Decimal minus(Decimal other) {
+        Objects.requireNonNull(other, "Cannot subtract a null Decimal");
         return new Decimal(value.subtract(other.value));
     }
 
     public Decimal times(Decimal other) {
+        Objects.requireNonNull(other, "Cannot multiply by a null Decimal");
         return new Decimal(value.multiply(other.value));
     }
 
     public Decimal div(Decimal other) {
+        Objects.requireNonNull(other, "Cannot divide by a null Decimal");
         if (other.isZero()) {
             throw new IllegalArgumentException("Cannot divide a number by zero");
         }
@@ -66,7 +74,7 @@ public class Decimal {
 
     @Override
     public String toString() {
-        return new StringBuilder("Decimal{").append("value=").append(value).append('}').toString();
+        return value.toPlainString();
     }
 
     @Override

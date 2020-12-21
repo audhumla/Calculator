@@ -1,5 +1,7 @@
 package com.ki.calculator.domain.model.common;
 
-import java.util.function.Predicate;
+@FunctionalInterface
+public interface Validator<T> {
 
-public interface Validator<T> extends Predicate<T> { }
+    Either<ValidationException, String> validate(T obj);
+}

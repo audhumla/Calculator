@@ -64,8 +64,8 @@ class DecimalTest {
 
         @ParameterizedTest
         @MethodSource("input")
-        void shouldComputeSum(Decimal left, Decimal right, Decimal result) {
-            assertThat(left.plus(right)).isEqualTo(result);
+        void shouldComputeSum(Decimal leftOperand, Decimal rightOperand, Decimal result) {
+            assertThat(leftOperand.plus(rightOperand)).isEqualTo(result);
         }
 
         @SuppressWarnings("unused")
@@ -127,7 +127,7 @@ class DecimalTest {
                     () -> aNumber.div(zero)
             )
                     .isInstanceOf(IllegalArgumentException.class)
-                   .hasMessage("Cannot divide a number by zero");
+                    .hasMessage("Cannot divide a number by zero");
         }
     }
 

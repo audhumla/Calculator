@@ -14,8 +14,7 @@ public final class RightOperationValidator implements Validator<RightOperation> 
             rightOperation -> rightOperation.getOperation() == MathOperation.DIVISION;
     private static final Predicate<RightOperation> isDivisionByZero =
             rightOperation -> isDivision.test(rightOperation) && isNumberZero.test(rightOperation);
-
-
+    
     @Override
     public Either<ValidationException, String> validate(RightOperation rightOperation) {
         if (isDivisionByZero.test(rightOperation)) {

@@ -8,6 +8,9 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    jcenter {
+        "http://jcenter.bintray.com/"
+    }
 }
 
 dependencies {
@@ -48,9 +51,3 @@ val integrationTest = task<Test>("integrationTest") {
 }
 
 tasks.check { dependsOn(integrationTest) }
-
-task<JavaExec>("run"){
-    classpath = files("build/libs/$group-$version.jar")
-    classpath += sourceSets["main"].output
-    main = "com.ki.calculator.inbound.Main"
-}

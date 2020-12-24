@@ -49,12 +49,8 @@ public class ExpressionProviderFileAdapterTest {
 
                 assertThat(actual).isEqualTo(
                         new Expression(3)
-                                .append(
-                                        List.of(
-                                                new RightOperation(MathOperation.SUM, Decimal.of(2)),
-                                                new RightOperation(MathOperation.MULTIPLICATION, Decimal.of(3))
-                                        )
-                                )
+                                .append(new RightOperation(MathOperation.SUM, Decimal.of(2)))
+                                .append(new RightOperation(MathOperation.MULTIPLICATION, Decimal.of(3)))
                 );
             }
         }

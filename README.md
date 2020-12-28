@@ -6,7 +6,7 @@
 <img src="resources/calculator.png" alt="Logo" width="241.2" height="254.6" />
 
 # Table of content
- - [Description](#description-:page_with_curl:)
+ - [Description](#description-page_with_curl)
     * [Example 1](#example-1)
     * [Example 2](#example-2)
 

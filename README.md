@@ -43,5 +43,3 @@ apply 5
 
 #### [Explanation]
 `5 * 9 = 45`
-
-Please include unit tests and demonstrate good architectural principles.

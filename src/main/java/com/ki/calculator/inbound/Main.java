@@ -1,17 +1,19 @@
 package com.ki.calculator.inbound;
 
 import com.ki.calculator.domain.model.Decimal;
+import com.ki.calculator.domain.model.FormatInfo;
 import com.ki.calculator.domain.model.common.Either;
 import com.ki.calculator.domain.usecase.CalculatorUseCase;
 import com.ki.calculator.outbound.ExpressionProviderFileAdapter;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.text.DecimalFormat;
 
 public class Main {
 
     public static void main(String[] args) {
-        if (validateInput(args))
+        if (!validateInput(args))
             return;
 
         new CalculatorUseCase(
@@ -43,12 +45,31 @@ public class Main {
     }
 
     private static class Presenter {
-        private static void print(Either<Exception, Decimal> result ) {
+        private static void print(Either<Exception, Decimal> result) {
             if (result.isLeft()) {
                 System.out.println("Cannot perform the computation because of: " + result.left());
             } else {
-                System.out.println(result.right());
+                String output = result.right().format(Format.UNIT);
+                System.out.println(output);
             }
+        }
+    }
+
+    public enum Format implements FormatInfo {
+
+        SIMPLE("#,##0.00"),
+        UNIT("#,##0"),
+        ;
+
+        private final String pattern;
+
+        private Format(String pattern) {
+            this.pattern = pattern;
+        }
+
+        @Override
+        public String pattern() {
+            return pattern;
         }
     }
 }

@@ -45,3 +45,14 @@ apply 5
 `5 * 9 = 45`
 
 Please include unit tests and demonstrate good architectural principles.
+
+## How to run it
+### Dependencies
+You need to install a version of Java  
+
+### Run it
+Navigate to the home directory and type:
+```bash
+ ./run.sh input/example-1.txt 
+```
+   

@@ -1,14 +1,15 @@
 #!/bin/sh
-usage()
-{
-    echo "It runs the calculator."
-    echo "Provide as input the file to read the list of expression from"
-    echo "Example: ./run.sh input-file.txt"
-}
-
 main()
 {
-    java -cp build/libs/Calculator-1.0-SNAPSHOT.jar com.ki.calculator.inbound.Main "$1"
+    input_file="input/input-file.txt"
+    if [ -n "$1" ]
+    then
+      input_file="$1"
+    fi
+
+    echo "Running the Calculator with gradle..."
+    ./gradlew build installDist run --args="$input_file"
+    echo "Application terminated"
 }
 
 main "$@"

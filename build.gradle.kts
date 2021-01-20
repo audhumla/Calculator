@@ -1,10 +1,16 @@
 plugins {
     java
-    jacoco
+    application
 }
 
 group = "org.ki.calculator"
 version = "1.0-SNAPSHOT"
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
 
 repositories {
     mavenCentral()
@@ -23,13 +29,6 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-tasks.test {
-    finalizedBy(tasks.jacocoTestReport)
-}
-tasks.jacocoTestReport {
-    dependsOn(tasks.test)
 }
 
 sourceSets {
@@ -51,3 +50,7 @@ val integrationTest = task<Test>("integrationTest") {
 }
 
 tasks.check { dependsOn(integrationTest) }
+
+application {
+    mainClass.set("com.ki.calculator.inbound.Main")
+}

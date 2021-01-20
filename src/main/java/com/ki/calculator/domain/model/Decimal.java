@@ -2,6 +2,7 @@ package com.ki.calculator.domain.model;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 import static java.math.BigDecimal.ZERO;
@@ -64,6 +65,16 @@ public class Decimal {
         return new Decimal(value.divide(other.value, ROUNDING_MODE));
     }
 
+    public String format(FormatInfo info) {
+        return getFormatInstance(info).format(value);
+    }
+
+    private static DecimalFormat getFormatInstance(FormatInfo info) {
+        DecimalFormat format = (DecimalFormat) DecimalFormat.getInstance();
+        format.applyPattern(info.pattern());
+        return format;
+    }
+
     @Override
     public boolean equals(Object other) {
         if (this == other) return true;
@@ -82,3 +93,4 @@ public class Decimal {
         return Objects.hash(value);
     }
 }
+

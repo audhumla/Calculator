@@ -1,8 +1,6 @@
 
 # Calculator
 
-[![Master Build](https://travis-ci.com/audhumla/Calculator.svg?branch=master)](https://travis-ci.com/github/audhumla/Calculator)
-
 <img src="resources/calculator.png" alt="Logo" width="241.2" height="254.6" />
 
 # Table of content

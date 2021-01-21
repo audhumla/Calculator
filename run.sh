@@ -1,7 +1,7 @@
 #!/bin/sh
 main()
 {
-    input_file="input/input-file.txt"
+    input_file="input/example-1.txt"
     if [ -n "$1" ]
     then
       input_file="$1"

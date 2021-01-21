@@ -8,12 +8,11 @@ import com.ki.calculator.outbound.ExpressionProviderFileAdapter;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.text.DecimalFormat;
 
 public class Main {
 
     public static void main(String[] args) {
-        if (!validateInput(args))
+        if (!isValidInput(args))
             return;
 
         new CalculatorUseCase(
@@ -22,13 +21,13 @@ public class Main {
         ).execute();
     }
 
-    private static boolean validateInput(String[] args) {
+    private static boolean isValidInput(String[] args) {
         if (args.length != 1) {
             printUsage();
             return false;
         }
         if (!Files.exists(Path.of(args[0]))) {
-            System.out.println("File with name \""+ args[0] + "\" does not exist. Please, provide an existent file.");
+            System.out.println("File with name \""+ args[0] + "\" does not exist. Please, provide a valid file.");
             return false;
         }
         return true;
